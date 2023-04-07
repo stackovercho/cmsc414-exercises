@@ -1,0 +1,4 @@
+#! /bin/bash
+
+gdb -batch -ex 'file ./foo' -ex 'disassemble/r foobar'
+

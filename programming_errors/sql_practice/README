@@ -1,0 +1,37 @@
+In this assignment you will be working with a simple database to become
+familiar with basic SQL statements. Through step 7 must be done in order
+for subsequent steps to work!
+
+1. Install the lamp image from ELMS
+     docker image load -i lamp.tar
+
+2. Start a container with this image from this directory, in interactive mode:
+     docker run -v "$(pwd):/mnt" -ti lamp /bin/bash
+
+3. Fix some weird permissions issues and launch the mysql server:
+     chown -R mysql:mysql /var/lib/mysql* && service mysql start
+
+4. Start the MySQL console UI: "mysql -u root -p" (the password is "root")
+
+5. Run "CREATE DATABASE mysqlsampledatabase;"
+
+6. Run "USE mysqlsampledatabase;"
+
+7. Run "SOURCE /mnt/mysqlsampledatabase.sql;" to import data
+
+8. You can see all the databases on your host by running "show databases;"
+
+9. See all the tables by running "show tables;"
+
+10. See detailed information about a table: "describe customers;"
+
+11. Find SELECT queries to get the following information from the
+    customers table (use online documentation like W3Schools or the
+    file sql_quick_ref in this repo):
+    - Find the phone number for "Mini Wheels Co." 
+    - Get all the customers in France
+    - Get the names and credit limits of all the customers and sort in
+      ascending order
+    - Get the names of all cities where more than one customer lives
+
+    Store these queries in a file named queries.sql
