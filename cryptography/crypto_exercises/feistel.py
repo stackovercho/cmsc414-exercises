@@ -24,16 +24,24 @@ blocks = zip( input_text[0::2], input_text[1::2] )
 
 # ==> Edit these functions <==
 def f1(x):
-    return x
+    h = hashlib.sha1('ezreal'.encode + str(x).encode())
+    v = int(h.hexdigest()[-2:], 16)
+    return v
 
 def f2(x):
-    return x
+    h = hashlib.sha1('vayne'.encode + str(x).encode())
+    v = int(h.hexdigest()[-2:], 16)
+    return v
 
 def f3(x):
-    return x
+    h = hashlib.sha1('kaisa'.encode + str(x).encode())
+    v = int(h.hexdigest()[-2:], 16)
+    return v
 
 def f4(x):
-    return x
+    h = hashlib.sha1('zeri'.encode + str(x).encode())
+    v = int(h.hexdigest()[-2:], 16)
+    return v
 
 # Create empty lists for the plaintext and ciphertext, as numbers.
 input_blocks = list()

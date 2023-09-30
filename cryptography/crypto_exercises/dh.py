@@ -31,7 +31,8 @@ def find_prime(min_val, max_val):
             return(v)
 
 # ==> Change this range! <==
-p = find_prime(11,500)
+# p = find_prime(11,500)
+p = find_prime(110000,5000000)
 
 # g must be relatively prime to p
 g = r.randint(3,p-1)
@@ -39,20 +40,20 @@ g = r.randint(3,p-1)
 print('p={}, g={}'.format(p,g))
 
 # ==> Alice and Bob must select their exponents a and b <==
-a = 0
-b = 0
+a = r.randint(3,p-2)
+b = r.randint(3,p-2)
 
 print('a={}, b={}'.format(a,b))
 
 # ==> Now compute the public values A and B that Alice and Bob exchange <==
-A = 0
-B = 0
+A = g**a % p
+B = g**b % p
 
 print('A={}, B={}'.format(A,B))
 
 # ==> Now compute the shared secret from both Alice's and Bob's perspectives <==
-sA = 0
-sB = 0
+sA = B**a % p
+sB = A**b % p
 
 print('sA={}, sB={}'.format(sA,sB))
 
